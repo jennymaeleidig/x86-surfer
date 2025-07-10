@@ -1,22 +1,8 @@
 # X86SurferComponent
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+## Dev
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
+### Building
 
 To build the library, run:
 
@@ -31,6 +17,7 @@ This command will compile your project, and the build artifacts will be placed i
 Once the project is built, you can publish your library by following these steps:
 
 1. Navigate to the `dist` directory:
+
    ```bash
    cd dist/x86-surfer-component
    ```
@@ -40,24 +27,24 @@ Once the project is built, you can publish your library by following these steps
    npm publish
    ```
 
-## Running unit tests
+## Using the package
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### In the consuming app
 
-```bash
-ng test
+Ensure that an environment has be created with the following structure:
+
+```ts
+export const environment = {
+  X86_AGENT_ROOT: "https://x86--agent--9pwq69n94c9h.code.run",
+};
 ```
 
-## Running end-to-end tests
+then in the app module, ensure that an HTTP client is provided as well as the X86_AGENT_ROOT:
 
-For end-to-end (e2e) testing, run:
+```ts
+import { X86_AGENT_ROOT } from "x86-surfer-component";
 
-```bash
-ng e2e
+export const appConfig: ApplicationConfig = {
+  providers: [provideHttpClient(), { provide: X86_AGENT_ROOT, useValue: environment.X86_AGENT_ROOT }],
+};
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

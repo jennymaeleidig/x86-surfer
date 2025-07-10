@@ -1,5 +1,8 @@
 <div id="surfer" class="relative w-fit h-fit">
-  <img class="w-full h-full object-contain" src="../../assets/macintosh.png" />
+  <img
+    class="w-full h-full object-contain"
+    src="https://raw.githubusercontent.com/jennymaeleidig/x86-soundscape/refs/heads/main/src/assets/images/macintosh.png"
+  />
   <div *ngIf="video$ | async as videoData; else loading">
     <div id="video-container" class="absolute z-10 inset-0">
       <div class="crt grayscale">
@@ -45,7 +48,7 @@
       <div class="crt grayscale">
         <img
           class="w-full object-fill aspect-512/342 rounded-2xl brightness-150"
-          src="../../assets/offline.gif"
+          src="https://raw.githubusercontent.com/jennymaeleidig/x86-soundscape/refs/heads/main/src/assets/images/offline.gif"
         />
       </div>
     </div>

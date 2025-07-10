@@ -3,5 +3,6 @@
   "dest": "../../dist/x86-surfer-component",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": ["src/assets/**/*"]
 }
